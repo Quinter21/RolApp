@@ -22,45 +22,9 @@ namespace WindowsFormsApp1
 
         private void Enemigos_Load(object sender, EventArgs e)
         {
-            enemigos.Columns.Add("Nombre", typeof (string));
-            enemigos.Columns.Add("PV", typeof(int));
-            enemigos.Columns.Add("PM", typeof(int));
-            enemigos.Columns.Add("FUE", typeof(int));
-            enemigos.Columns.Add("DES", typeof(int));
-            enemigos.Columns.Add("POD", typeof(int));
-            enemigos.Columns.Add("CON", typeof(int));
-            enemigos.Columns.Add("APA", typeof(int));
-            enemigos.Columns.Add("EDU", typeof(int));
-            enemigos.Columns.Add("TAM", typeof(int));
-            enemigos.Columns.Add("INT", typeof(int));
-            enemigos.Columns.Add("MOV", typeof(int));
+
+            inicializar_enemigos();
             
-            if (!File.Exists(path))
-            {
-                using (FileStream fs = File.Create(path)) { }
-            }
-
-            enemigos.Rows.Clear();
-
-            using (StreamReader sr = new StreamReader(path))
-            {
-                string text = sr.ReadToEnd();
-                if (text != "")
-                {
-                    String[] lines = text.Split(';');
-                    foreach (string line in lines)
-                    {
-                        String[] parts = line.Split(',');
-                        enemigos.Rows.Add(parts);
-                    }
-                }
-            }
-
-            ListaEnemigos.DataSource = enemigos;
-            for (int i = 0; i < ListaEnemigos.Columns.Count; i++)
-            {
-                ListaEnemigos.Columns[i].Visible = false;
-            }
 
             enemigos.Rows.Add("JOSE", "14", "15", "50", "50", "50", "50", "50", "50", "50", "50", "50");
             enemigos.Rows.Add("ANGEL", "24", "5", "70", "60", "80", "90", "50", "50", "70", "80", "60");
@@ -96,6 +60,52 @@ namespace WindowsFormsApp1
             else
             {
                 numAtrib.Value = 70;
+            }
+        }
+
+        private void inicializar_enemigos()
+        {
+            //enemigos.Columns.Add("id", typeof(int));
+            enemigos.Columns.Add("Nombre", typeof(string));
+            enemigos.Columns.Add("PV", typeof(int));
+            enemigos.Columns.Add("PM", typeof(int));
+            enemigos.Columns.Add("FUE", typeof(int));
+            enemigos.Columns.Add("DES", typeof(int));
+            enemigos.Columns.Add("POD", typeof(int));
+            enemigos.Columns.Add("CON", typeof(int));
+            enemigos.Columns.Add("APA", typeof(int));
+            enemigos.Columns.Add("EDU", typeof(int));
+            enemigos.Columns.Add("TAM", typeof(int));
+            enemigos.Columns.Add("INT", typeof(int));
+            enemigos.Columns.Add("MOV", typeof(int));
+
+            //enemigos.PrimaryKey = new DataColumn[] { enemigos.Columns["id"] };
+
+            if (!File.Exists(path))
+            {
+                using (FileStream fs = File.Create(path)) { }
+            }
+
+            enemigos.Rows.Clear();
+
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string text = sr.ReadToEnd();
+                if (text != "")
+                {
+                    String[] lines = text.Split(';');
+                    foreach (string line in lines)
+                    {
+                        String[] parts = line.Split(',');
+                        enemigos.Rows.Add(parts);
+                    }
+                }
+            }
+
+            ListaEnemigos.DataSource = enemigos;
+            for (int i = 1; i < ListaEnemigos.Columns.Count; i++)
+            {
+                ListaEnemigos.Columns[i].Visible = false;
             }
         }
     }
