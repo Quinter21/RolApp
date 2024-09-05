@@ -54,6 +54,12 @@
             this.numPOD = new System.Windows.Forms.NumericUpDown();
             this.Atributos = new System.Windows.Forms.ComboBox();
             this.numAtrib = new System.Windows.Forms.NumericUpDown();
+            this.textNombre = new System.Windows.Forms.TextBox();
+            this.Nuevo = new System.Windows.Forms.Button();
+            this.Guardar = new System.Windows.Forms.Button();
+            this.Eliminar = new System.Windows.Forms.Button();
+            this.enemigosTest = new System.Windows.Forms.DataGridView();
+            this.atributosTest = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ListaEnemigos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPM)).BeginInit();
@@ -67,6 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numEDU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPOD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAtrib)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemigosTest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atributosTest)).BeginInit();
             this.SuspendLayout();
             // 
             // ListaEnemigos
@@ -93,9 +101,9 @@
             this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre.Location = new System.Drawing.Point(215, 13);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(133, 38);
+            this.Nombre.Size = new System.Drawing.Size(142, 38);
             this.Nombre.TabIndex = 1;
-            this.Nombre.Text = "Nombre";
+            this.Nombre.Text = "Nombre:";
             // 
             // LabVida
             // 
@@ -354,16 +362,17 @@
             // 
             this.Atributos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atributos.FormattingEnabled = true;
+            this.Atributos.IntegralHeight = false;
             this.Atributos.Location = new System.Drawing.Point(227, 217);
             this.Atributos.Name = "Atributos";
-            this.Atributos.Size = new System.Drawing.Size(176, 33);
+            this.Atributos.Size = new System.Drawing.Size(278, 33);
             this.Atributos.TabIndex = 43;
             this.Atributos.SelectedIndexChanged += new System.EventHandler(this.Atributos_SelectedIndexChanged);
             // 
             // numAtrib
             // 
             this.numAtrib.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numAtrib.Location = new System.Drawing.Point(427, 220);
+            this.numAtrib.Location = new System.Drawing.Point(516, 218);
             this.numAtrib.Name = "numAtrib";
             this.numAtrib.Size = new System.Drawing.Size(64, 30);
             this.numAtrib.TabIndex = 44;
@@ -372,12 +381,94 @@
             0,
             0,
             0});
+            this.numAtrib.ValueChanged += new System.EventHandler(this.numAtrib_ValueChanged);
+            // 
+            // textNombre
+            // 
+            this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombre.Location = new System.Drawing.Point(363, 10);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(404, 45);
+            this.textNombre.TabIndex = 45;
+            // 
+            // Nuevo
+            // 
+            this.Nuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nuevo.Location = new System.Drawing.Point(222, 300);
+            this.Nuevo.Name = "Nuevo";
+            this.Nuevo.Size = new System.Drawing.Size(135, 56);
+            this.Nuevo.TabIndex = 46;
+            this.Nuevo.Text = "Nuevo";
+            this.Nuevo.UseVisualStyleBackColor = true;
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
+            // 
+            // Guardar
+            // 
+            this.Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guardar.Location = new System.Drawing.Point(426, 300);
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Size = new System.Drawing.Size(135, 56);
+            this.Guardar.TabIndex = 47;
+            this.Guardar.Text = "Guardar";
+            this.Guardar.UseVisualStyleBackColor = true;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminar.Location = new System.Drawing.Point(632, 300);
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(135, 56);
+            this.Eliminar.TabIndex = 48;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
+            // 
+            // enemigosTest
+            // 
+            this.enemigosTest.AllowUserToAddRows = false;
+            this.enemigosTest.AllowUserToDeleteRows = false;
+            this.enemigosTest.AllowUserToResizeColumns = false;
+            this.enemigosTest.AllowUserToResizeRows = false;
+            this.enemigosTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.enemigosTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.enemigosTest.ColumnHeadersVisible = false;
+            this.enemigosTest.Location = new System.Drawing.Point(790, 10);
+            this.enemigosTest.Name = "enemigosTest";
+            this.enemigosTest.RowHeadersVisible = false;
+            this.enemigosTest.RowHeadersWidth = 51;
+            this.enemigosTest.RowTemplate.Height = 24;
+            this.enemigosTest.Size = new System.Drawing.Size(617, 251);
+            this.enemigosTest.TabIndex = 49;
+            // 
+            // atributosTest
+            // 
+            this.atributosTest.AllowUserToAddRows = false;
+            this.atributosTest.AllowUserToDeleteRows = false;
+            this.atributosTest.AllowUserToResizeColumns = false;
+            this.atributosTest.AllowUserToResizeRows = false;
+            this.atributosTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.atributosTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.atributosTest.ColumnHeadersVisible = false;
+            this.atributosTest.Location = new System.Drawing.Point(222, 379);
+            this.atributosTest.Name = "atributosTest";
+            this.atributosTest.RowHeadersVisible = false;
+            this.atributosTest.RowHeadersWidth = 51;
+            this.atributosTest.RowTemplate.Height = 24;
+            this.atributosTest.Size = new System.Drawing.Size(1185, 302);
+            this.atributosTest.TabIndex = 50;
             // 
             // Enemigos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1442, 706);
+            this.Controls.Add(this.atributosTest);
+            this.Controls.Add(this.enemigosTest);
+            this.Controls.Add(this.Eliminar);
+            this.Controls.Add(this.Guardar);
+            this.Controls.Add(this.Nuevo);
+            this.Controls.Add(this.textNombre);
             this.Controls.Add(this.numAtrib);
             this.Controls.Add(this.Atributos);
             this.Controls.Add(this.numMOV);
@@ -406,6 +497,7 @@
             this.Controls.Add(this.ListaEnemigos);
             this.Name = "Enemigos";
             this.Text = "Enemigos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Enemigos_FormClosing);
             this.Load += new System.EventHandler(this.Enemigos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ListaEnemigos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPV)).EndInit();
@@ -420,6 +512,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numEDU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPOD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAtrib)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemigosTest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atributosTest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,5 +547,11 @@
         private System.Windows.Forms.NumericUpDown numPOD;
         private System.Windows.Forms.ComboBox Atributos;
         private System.Windows.Forms.NumericUpDown numAtrib;
+        private System.Windows.Forms.TextBox textNombre;
+        private System.Windows.Forms.Button Nuevo;
+        private System.Windows.Forms.Button Guardar;
+        private System.Windows.Forms.Button Eliminar;
+        private System.Windows.Forms.DataGridView enemigosTest;
+        private System.Windows.Forms.DataGridView atributosTest;
     }
 }
