@@ -30,9 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.doubleClick1 = new WindowsFormsApp1.DoubleClick();
             this.TablePrevisual = new System.Windows.Forms.DataGridView();
             this.AreaPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.doubleClick1 = new WindowsFormsApp1.DoubleClick();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TablePrevisual)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +46,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(36, 675);
             this.panel1.TabIndex = 0;
+            // 
+            // doubleClick1
+            // 
+            this.doubleClick1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doubleClick1.Location = new System.Drawing.Point(0, 0);
+            this.doubleClick1.Name = "doubleClick1";
+            this.doubleClick1.Size = new System.Drawing.Size(35, 114);
+            this.doubleClick1.TabIndex = 1;
+            this.doubleClick1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.doubleClick1.UseVisualStyleBackColor = true;
+            this.doubleClick1.Click += new System.EventHandler(this.button1_Click);
+            this.doubleClick1.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
             // 
             // TablePrevisual
             // 
@@ -81,18 +93,8 @@
             this.AreaPanel.Name = "AreaPanel";
             this.AreaPanel.Size = new System.Drawing.Size(1113, 675);
             this.AreaPanel.TabIndex = 2;
-            // 
-            // doubleClick1
-            // 
-            this.doubleClick1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doubleClick1.Location = new System.Drawing.Point(0, 0);
-            this.doubleClick1.Name = "doubleClick1";
-            this.doubleClick1.Size = new System.Drawing.Size(35, 114);
-            this.doubleClick1.TabIndex = 1;
-            this.doubleClick1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.doubleClick1.UseVisualStyleBackColor = true;
-            this.doubleClick1.Click += new System.EventHandler(this.button1_Click);
-            this.doubleClick1.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
+            this.AreaPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.AreaPanel_DragDrop);
+            this.AreaPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.AreaPanel_DragEnter);
             // 
             // Principal
             // 

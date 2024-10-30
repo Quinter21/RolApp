@@ -118,14 +118,29 @@ namespace WindowsFormsApp1
 
         private void TablePrevisual_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            EnemyCard enemy = new EnemyCard(TEnemigos.Rows[TablePrevisual.CurrentCell.RowIndex]["Nombre"].ToString());
+            EnemyCard enemy = new EnemyCard(TEnemigos.Rows[e.RowIndex]["Nombre"].ToString());
             AreaPanel.Controls.Add(enemy);
         }
 
         private void TablePrevisual_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            TablePrevisual.DoDragDrop(TablePrevisual.CurrentRow.DataBoundItem, DragDropEffects.Copy);
+            TablePrevisual.DoDragDrop(e.RowIndex.ToString(), DragDropEffects.Copy);
 
         }
+
+        private void AreaPanel_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void AreaPanel_DragDrop(object sender, DragEventArgs e)
+        {
+            int index = Int32.Parse(e.Data.GetData(DataFormats.Text).ToString());
+            //EnemyCard enemy = new EnemyCard(TEnemigos.Rows[TablePrevisual.CurrentCell.RowIndex]["Nombre"].ToString());
+            EnemyCard enemy = new EnemyCard(TEnemigos.Rows[index]["Nombre"].ToString());
+            AreaPanel.Controls.Add(enemy);
+        }
+
+        
     }
 }

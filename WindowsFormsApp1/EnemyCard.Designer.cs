@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Nombre = new System.Windows.Forms.Label();
             this.Delete = new System.Windows.Forms.Button();
+            this.Nombre = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,16 +44,6 @@
             this.panel1.Size = new System.Drawing.Size(400, 318);
             this.panel1.TabIndex = 0;
             // 
-            // Nombre
-            // 
-            this.Nombre.AutoSize = true;
-            this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.Location = new System.Drawing.Point(172, 118);
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(79, 29);
-            this.Nombre.TabIndex = 0;
-            this.Nombre.Text = "label1";
-            // 
             // Delete
             // 
             this.Delete.BackColor = System.Drawing.Color.Red;
@@ -64,6 +54,16 @@
             this.Delete.Text = "button1";
             this.Delete.UseVisualStyleBackColor = false;
             this.Delete.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSize = true;
+            this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre.Location = new System.Drawing.Point(164, 118);
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Size = new System.Drawing.Size(79, 29);
+            this.Nombre.TabIndex = 0;
+            this.Nombre.Text = "label1";
             // 
             // EnemyCard
             // 
