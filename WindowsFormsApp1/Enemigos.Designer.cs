@@ -88,6 +88,7 @@
             this.ListaEnemigos.ColumnHeadersVisible = false;
             this.ListaEnemigos.Location = new System.Drawing.Point(12, 12);
             this.ListaEnemigos.Name = "ListaEnemigos";
+            this.ListaEnemigos.ReadOnly = true;
             this.ListaEnemigos.RowHeadersVisible = false;
             this.ListaEnemigos.RowHeadersWidth = 51;
             this.ListaEnemigos.RowTemplate.Height = 24;
